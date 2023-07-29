@@ -1,0 +1,782 @@
+examples/src/rc_balance.c:679:9: style: The scope of the variable 'new_v' can be reduced. [variableScope]
+ double new_v;
+        ^
+examples/src/rc_balance.c:59:9: style: struct member 'core_state_t::mot_drive' is never used. [unusedStructMember]
+ double mot_drive; ///< u compensated for battery voltage
+        ^
+examples/src/rc_check_battery.c:17:9: style: The scope of the variable 'pack_voltage' can be reduced. [variableScope]
+ double pack_voltage; // 2S pack voltage on JST XH 2S balance connector
+        ^
+examples/src/rc_check_battery.c:18:9: style: The scope of the variable 'cell_voltage' can be reduced. [variableScope]
+ double cell_voltage; // cell voltage
+        ^
+examples/src/rc_check_battery.c:19:9: style: The scope of the variable 'jack_voltage' can be reduced. [variableScope]
+ double jack_voltage; // could be dc power supply or another battery
+        ^
+examples/src/rc_dsm_passthrough.c:33:13: style: The scope of the variable 'val' can be reduced. [variableScope]
+ int i, ch, val;
+            ^
+examples/src/rc_test_complementary_filters.c:43:9: style: The scope of the variable 'lpf' can be reduced. [variableScope]
+ double lpf,hpf,lpt,hpt,u;
+        ^
+examples/src/rc_test_complementary_filters.c:43:13: style: The scope of the variable 'hpf' can be reduced. [variableScope]
+ double lpf,hpf,lpt,hpt,u;
+            ^
+examples/src/rc_test_complementary_filters.c:43:17: style: The scope of the variable 'lpt' can be reduced. [variableScope]
+ double lpf,hpf,lpt,hpt,u;
+                ^
+examples/src/rc_test_complementary_filters.c:43:21: style: The scope of the variable 'hpt' can be reduced. [variableScope]
+ double lpf,hpf,lpt,hpt,u;
+                    ^
+examples/src/rc_test_dsm.c:96:4: style: Consecutive return, break, continue, goto or throw statements are unnecessary. [duplicateBreak]
+   break;
+   ^
+examples/src/rc_test_filters.c:43:9: style: The scope of the variable 'lp' can be reduced. [variableScope]
+ double lp,hp,i,u,lpb,hpb;
+        ^
+examples/src/rc_test_filters.c:43:12: style: The scope of the variable 'hp' can be reduced. [variableScope]
+ double lp,hp,i,u,lpb,hpb;
+           ^
+examples/src/rc_test_filters.c:43:15: style: The scope of the variable 'i' can be reduced. [variableScope]
+ double lp,hp,i,u,lpb,hpb;
+              ^
+examples/src/rc_test_filters.c:43:19: style: The scope of the variable 'lpb' can be reduced. [variableScope]
+ double lp,hp,i,u,lpb,hpb;
+                  ^
+examples/src/rc_test_filters.c:43:23: style: The scope of the variable 'hpb' can be reduced. [variableScope]
+ double lp,hp,i,u,lpb,hpb;
+                      ^
+examples/src/rc_test_mavlink.c:67:5: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+    fprintf(stderr, "UDP port must be less than %d\n", UINT16_MAX);
+    ^
+examples/src/rc_test_mavlink.c:78:5: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+    fprintf(stderr, "sys_id must be between 0 and %d\n", UINT8_MAX);
+    ^
+library/src/button.c:65:11: style: The scope of the variable 'event' can be reduced. [variableScope]
+ int val, event, chip, pin, pol, debounce;
+          ^
+library/src/dsm.c:102:2: portability: fflush() called on input stream 'stdin' may result in undefined behaviour on non-linux systems. [fflushOnInputStream]
+ fflush(stdin);
+ ^
+library/src/io/adc.c:41:9: style: The scope of the variable 'temp_fd' can be reduced. [variableScope]
+ int i, temp_fd;
+        ^
+library/src/io/pwm.c:308:8: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+ len = snprintf(buf, sizeof(buf), "%d", period_ns[ss]);
+       ^
+library/src/io/pwm.c:486:3: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+  fprintf(stderr,"ERROR in rc_pwm_set_duty_ns, duty must be between 0 & %d for current frequency\n", period_ns[ss]);
+  ^
+library/src/io/pwm.c:491:8: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+ len = snprintf(buf, sizeof(buf), "%d", duty_ns);
+       ^
+library/src/io/pwm.c:95:5: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ len=write(export_fd, "0", 2);
+    ^
+library/src/io/pwm.c:64:6: note: len is assigned
+ len = snprintf(buf, sizeof(buf), OCP_DIR "/pwmchip*/export", ss*2, ss*2);
+     ^
+library/src/io/pwm.c:95:5: note: len is overwritten
+ len=write(export_fd, "0", 2);
+    ^
+library/src/io/pwm.c:124:18: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/enable", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:109:6: note: len is assigned
+ len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/enable", ss*2); // mode 0
+     ^
+library/src/io/pwm.c:124:18: note: len is overwritten
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/enable", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:124:18: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/enable", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:113:7: note: len is assigned
+  len = snprintf(buf, sizeof(buf), SYS_DIR "/pwm-%d:0/enable", ssindex[ss]); // mode 1
+      ^
+library/src/io/pwm.c:124:18: note: len is overwritten
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/enable", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:180:5: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ len=write(unexport_fd, "0", 2);
+    ^
+library/src/io/pwm.c:153:6: note: len is assigned
+ len = snprintf(buf, sizeof(buf), OCP_DIR "/pwmchip*/unexport", ss*2, ss*2);
+     ^
+library/src/io/pwm.c:180:5: note: len is overwritten
+ len=write(unexport_fd, "0", 2);
+    ^
+library/src/io/pwm.c:247:18: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/duty_cycle", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:232:18: note: len is assigned
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/duty_cycle", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:247:18: note: len is overwritten
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/duty_cycle", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:247:18: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/duty_cycle", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:233:12: note: len is assigned
+ else  len = snprintf(buf, sizeof(buf), SYS_DIR "/pwm-%d:0/duty_cycle", ssindex[ss]); // mode 1
+           ^
+library/src/io/pwm.c:247:18: note: len is overwritten
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/duty_cycle", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:257:18: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/enable", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:247:18: note: len is assigned
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/duty_cycle", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:257:18: note: len is overwritten
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/enable", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:257:18: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/enable", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:248:12: note: len is assigned
+ else  len = snprintf(buf, sizeof(buf), SYS_DIR "/pwm-%d:1/duty_cycle", ssindex[ss]); // mode 1
+           ^
+library/src/io/pwm.c:257:18: note: len is overwritten
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/enable", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:265:18: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/enable", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:257:18: note: len is assigned
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/enable", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:265:18: note: len is overwritten
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/enable", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:265:18: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/enable", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:258:12: note: len is assigned
+ else  len = snprintf(buf, sizeof(buf), SYS_DIR "/pwm-%d:0/enable", ssindex[ss]); // mode 1
+           ^
+library/src/io/pwm.c:265:18: note: len is overwritten
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/enable", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:273:18: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/period", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:265:18: note: len is assigned
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/enable", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:273:18: note: len is overwritten
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/period", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:273:18: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/period", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:266:12: note: len is assigned
+ else  len = snprintf(buf, sizeof(buf), SYS_DIR "/pwm-%d:1/enable", ssindex[ss]); // mode 1
+           ^
+library/src/io/pwm.c:273:18: note: len is overwritten
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/period", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:281:18: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/period", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:273:18: note: len is assigned
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/period", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:281:18: note: len is overwritten
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/period", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:281:18: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/period", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:274:12: note: len is assigned
+ else  len = snprintf(buf, sizeof(buf), SYS_DIR "/pwm-%d:0/period", ssindex[ss]); // mode 1
+           ^
+library/src/io/pwm.c:281:18: note: len is overwritten
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/period", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:289:18: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/polarity", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:281:18: note: len is assigned
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/period", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:289:18: note: len is overwritten
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/polarity", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:289:18: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/polarity", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:282:12: note: len is assigned
+ else  len = snprintf(buf, sizeof(buf), SYS_DIR "/pwm-%d:1/period", ssindex[ss]); // mode 1
+           ^
+library/src/io/pwm.c:289:18: note: len is overwritten
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/polarity", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:297:18: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/polarity", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:289:18: note: len is assigned
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm0/polarity", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:297:18: note: len is overwritten
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/polarity", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:297:18: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/polarity", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:290:12: note: len is assigned
+ else  len = snprintf(buf, sizeof(buf), SYS_DIR "/pwm-%d:0/polarity", ssindex[ss]); // mode 1
+           ^
+library/src/io/pwm.c:297:18: note: len is overwritten
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/polarity", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:308:6: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ len = snprintf(buf, sizeof(buf), "%d", period_ns[ss]);
+     ^
+library/src/io/pwm.c:297:18: note: len is assigned
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/polarity", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:308:6: note: len is overwritten
+ len = snprintf(buf, sizeof(buf), "%d", period_ns[ss]);
+     ^
+library/src/io/pwm.c:308:6: style: Variable 'len' is reassigned a value before the old one has been used. [redundantAssignment]
+ len = snprintf(buf, sizeof(buf), "%d", period_ns[ss]);
+     ^
+library/src/io/pwm.c:298:12: note: len is assigned
+ else  len = snprintf(buf, sizeof(buf), SYS_DIR "/pwm-%d:1/polarity", ssindex[ss]); // mode 1
+           ^
+library/src/io/pwm.c:308:6: note: len is overwritten
+ len = snprintf(buf, sizeof(buf), "%d", period_ns[ss]);
+     ^
+library/src/io/pwm.c:124:18: style: Variable 'len' is assigned a value that is never used. [unreadVariable]
+ if(mode==0) len = snprintf(buf, sizeof(buf), SYS_DIR "/pwmchip%d/pwm1/enable", ss*2); // mode 0
+                 ^
+library/src/io/pwm.c:125:12: style: Variable 'len' is assigned a value that is never used. [unreadVariable]
+ else  len = snprintf(buf, sizeof(buf), SYS_DIR "/pwm-%d:1/enable",ssindex[ss]); // mode 1
+           ^
+library/src/io/uart.c:285:21: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int bytes_to_read, ret;
+                    ^
+library/src/io/uart.c:375:6: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int ret;
+     ^
+library/src/math/algebra.c:216:9: warning: Obsolete function 'alloca' called. In C99 and later it is recommended to use a variable length array instead. [allocaCalled]
+ ptmp = alloca(m*sizeof(int));
+        ^
+library/src/math/algebra.c:217:11: warning: Obsolete function 'alloca' called. In C99 and later it is recommended to use a variable length array instead. [allocaCalled]
+ rowtmp = alloca(m*sizeof(double));
+          ^
+library/src/math/algebra.c:33:20: style: The scope of the variable 'taui' can be reduced. [variableScope]
+ double norm, tau, taui, dot;
+                   ^
+library/src/math/algebra.c:176:14: style: The scope of the variable 'index' can be reduced. [variableScope]
+ int i,j,k,m,index,tmpint;
+             ^
+library/src/math/algebra.c:354:9: style: The scope of the variable 'fMaxElem' can be reduced. [variableScope]
+ double fMaxElem, fAcc;
+        ^
+library/src/math/algebra.c:355:17: style: The scope of the variable 'm' can be reduced. [variableScope]
+ int nDim,i,j,k,m;
+                ^
+library/src/math/matrix.c:264:8: warning: Obsolete function 'alloca' called. In C99 and later it is recommended to use a variable length array instead. [allocaCalled]
+ tmp = alloca(B.rows*sizeof(double));
+       ^
+library/src/math/matrix.c:467:8: warning: Obsolete function 'alloca' called. In C99 and later it is recommended to use a variable length array instead. [allocaCalled]
+ tmp = alloca(A.rows*sizeof(double));
+       ^
+library/src/math/matrix.c:57:3: error: Memory leak: ptr [memleak]
+  return -1;
+  ^
+library/src/math/matrix.c:109:3: error: Memory leak: ptr [memleak]
+  return -1;
+  ^
+library/src/math/matrix.c:60:30: portability: Casting between signed char * and double * which have an incompatible binary data representation. [invalidPointerCast]
+ for(i=0;i<rows;i++) A->d[i]=(double*)(((char*)ptr) + (i*cols*sizeof(double)));
+                             ^
+library/src/math/matrix.c:112:30: portability: Casting between signed char * and double * which have an incompatible binary data representation. [invalidPointerCast]
+ for(i=0;i<rows;i++) A->d[i]=(double*)(((char*)ptr) + (i*cols*sizeof(double)));
+                             ^
+library/src/math/quaternion.c:137:5: style: Same expression on both sides of '||'. [duplicateExpression]
+ if(unlikely(q==NULL||q==NULL)){
+    ^
+library/src/math/ring_buffer.c:147:25: style: The scope of the variable 'diff' can be reduced. [variableScope]
+ double mean, mean_sqr, diff;
+                        ^
+library/src/math/vector.c:292:25: style: The scope of the variable 'diff' can be reduced. [variableScope]
+ double mean, mean_sqr, diff;
+                        ^
+library/src/mavlink_udp.c:182:18: warning: Either the condition 'msg_id>256' is redundant or the array 'received_flag[256]' is accessed at index 256, which is out of bounds. [arrayIndexOutOfBoundsCond]
+ if(received_flag[msg_id]==0){
+                 ^
+library/src/mavlink_udp.c:178:23: note: Assuming that condition 'msg_id>256' is not redundant
+ if(msg_id<0 || msg_id>MAX_UNIQUE_MSG_TYPES){
+                      ^
+library/src/mavlink_udp.c:182:18: note: Array index out of bounds
+ if(received_flag[msg_id]==0){
+                 ^
+library/src/mavlink_udp.c:344:22: warning: Either the condition 'msg_id>256' is redundant or the array 'received_flag[256]' is accessed at index 256, which is out of bounds. [arrayIndexOutOfBoundsCond]
+ return received_flag[msg_id];
+                     ^
+library/src/mavlink_udp.c:340:23: note: Assuming that condition 'msg_id>256' is not redundant
+ if(msg_id<0 || msg_id>MAX_UNIQUE_MSG_TYPES){
+                      ^
+library/src/mavlink_udp.c:344:22: note: Array index out of bounds
+ return received_flag[msg_id];
+                     ^
+library/src/mavlink_udp.c:415:17: warning: Either the condition 'msg_id>256' is redundant or the array 'messages[256]' is accessed at index 256, which is out of bounds. [arrayIndexOutOfBoundsCond]
+ return messages[msg_id].sysid;
+                ^
+library/src/mavlink_udp.c:411:23: note: Assuming that condition 'msg_id>256' is not redundant
+ if(msg_id<0 || msg_id>MAX_UNIQUE_MSG_TYPES){
+                      ^
+library/src/mavlink_udp.c:415:17: note: Array index out of bounds
+ return messages[msg_id].sysid;
+                ^
+library/src/motor.c:240:10: style: The scope of the variable 'i' can be reduced. [variableScope]
+ int a,b,i;
+         ^
+library/src/motor.c:287:6: style: The scope of the variable 'i' can be reduced. [variableScope]
+ int i;
+     ^
+library/src/motor.c:326:6: style: The scope of the variable 'i' can be reduced. [variableScope]
+ int i;
+     ^
+library/src/mpu/mpu.c:2112:5: style: Condition 'is_new_dmp_data' is always true [knownConditionTrueFalse]
+ if(is_new_dmp_data && config.enable_magnetometer){
+    ^
+library/src/mpu/mpu.c:2068:18: note: Assignment 'is_new_dmp_data=1', assigned value is 1
+ is_new_dmp_data=1;
+                 ^
+library/src/mpu/mpu.c:2112:5: note: Condition 'is_new_dmp_data' is always true
+ if(is_new_dmp_data && config.enable_magnetometer){
+    ^
+library/src/mpu/mpu.c:2120:5: style: Condition 'is_new_dmp_data' is always true [knownConditionTrueFalse]
+ if(is_new_dmp_data) first_run=0;
+    ^
+library/src/mpu/mpu.c:2068:18: note: Assignment 'is_new_dmp_data=1', assigned value is 1
+ is_new_dmp_data=1;
+                 ^
+library/src/mpu/mpu.c:2120:5: note: Condition 'is_new_dmp_data' is always true
+ if(is_new_dmp_data) first_run=0;
+    ^
+library/src/mpu/mpu.c:2125:5: style: Condition 'is_new_dmp_data' is always true [knownConditionTrueFalse]
+ if(is_new_dmp_data) return 0;
+    ^
+library/src/mpu/mpu.c:2068:18: note: Assignment 'is_new_dmp_data=1', assigned value is 1
+ is_new_dmp_data=1;
+                 ^
+library/src/mpu/mpu.c:2125:5: note: Condition 'is_new_dmp_data' is always true
+ if(is_new_dmp_data) return 0;
+    ^
+library/src/mpu/mpu.c:2380:3: error: Resource leak: fd [resourceLeak]
+  return 0;
+  ^
+library/src/mpu/mpu.c:726:6: style: The scope of the variable 'i' can be reduced. [variableScope]
+ int i;
+     ^
+library/src/mpu/mpu.c:2196:14: style: Variable 'lastMagYaw' is assigned a value that is never used. [unreadVariable]
+  lastMagYaw = newMagYaw;
+             ^
+library/src/mpu/mpu.c:2197:14: style: Variable 'lastDMPYaw' is assigned a value that is never used. [unreadVariable]
+  lastDMPYaw = newDMPYaw;
+             ^
+library/src/pru/servo.c:159:4: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+   fprintf(stderr,"current val:%d\n", shared_mem_32bit_ptr[i-1]);
+   ^
+library/src/pru/servo.c:77:6: style: The scope of the variable 'i' can be reduced. [variableScope]
+ int i;
+     ^
+library/src/start_stop.c:295:41: style:inconclusive: Function 'shutdown_signal_handler' argument 1 names different: declaration 'signum' definition 'signo'. [funcArgNamesDifferent]
+static void shutdown_signal_handler(int signo)
+                                        ^
+library/src/start_stop.c:24:41: note: Function 'shutdown_signal_handler' argument 1 names different: declaration 'signum' definition 'signo'.
+static void shutdown_signal_handler(int signum);
+                                        ^
+library/src/start_stop.c:295:41: note: Function 'shutdown_signal_handler' argument 1 names different: declaration 'signum' definition 'signo'.
+static void shutdown_signal_handler(int signo)
+                                        ^
+services/rc_battery_monitor/src/rc_battery_monitor.c:52:9: style: The scope of the variable 'new_v_pack' can be reduced. [variableScope]
+ double new_v_pack, new_v_jack;
+        ^
+services/rc_battery_monitor/src/rc_battery_monitor.c:52:21: style: The scope of the variable 'new_v_jack' can be reduced. [variableScope]
+ double new_v_pack, new_v_jack;
+                    ^
+services/rc_battery_monitor/src/rc_battery_monitor.c:60:6: style: The scope of the variable 'charging' can be reduced. [variableScope]
+ int charging = 0;
+     ^
+library/src/math/algebra.c:437:0: style: The function 'rc_algebra_set_zero_tolerance' is never used. [unusedFunction]
+
+^
+library/src/bmp/bmp.c:269:0: style: The function 'rc_bmp_set_sea_level_pressure_pa' is never used. [unusedFunction]
+
+^
+library/src/button.c:306:0: style: The function 'rc_button_wait_for_event' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:42:0: style: The function 'rc_cleanup' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:125:0: style: The function 'rc_disable_motors' is never used. [unusedFunction]
+
+^
+library/src/start_stop.c:247:0: style: The function 'rc_disable_signal_handler' is never used. [unusedFunction]
+
+^
+library/src/dsm.c:662:0: style: The function 'rc_dsm_set_disconnect_callback' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:120:0: style: The function 'rc_enable_motors' is never used. [unusedFunction]
+
+^
+library/src/encoder.c:44:0: style: The function 'rc_encoder_write' is never used. [unusedFunction]
+
+^
+library/src/math/filter.c:750:0: style: The function 'rc_filter_double_integrator' is never used. [unusedFunction]
+
+^
+library/src/math/filter.c:158:0: style: The function 'rc_filter_duplicate' is never used. [unusedFunction]
+
+^
+library/src/math/filter.c:310:0: style: The function 'rc_filter_get_saturation_flag' is never used. [unusedFunction]
+
+^
+library/src/math/filter.c:391:0: style: The function 'rc_filter_multiply' is never used. [unusedFunction]
+
+^
+library/src/math/filter.c:425:0: style: The function 'rc_filter_multiply_three' is never used. [unusedFunction]
+
+^
+library/src/math/filter.c:340:0: style: The function 'rc_filter_previous_input' is never used. [unusedFunction]
+
+^
+library/src/math/filter.c:350:0: style: The function 'rc_filter_previous_output' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:108:0: style: The function 'rc_get_encoder_pos' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:99:0: style: The function 'rc_get_mode_button' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:91:0: style: The function 'rc_get_pause_button' is never used. [unusedFunction]
+
+^
+library/src/math/other.c:25:0: style: The function 'rc_get_random_float' is never used. [unusedFunction]
+
+^
+library/src/io/i2c.c:84:0: style: The function 'rc_i2c_close' is never used. [unusedFunction]
+
+^
+library/src/io/i2c.c:421:0: style: The function 'rc_i2c_get_fd' is never used. [unusedFunction]
+
+^
+library/src/io/i2c.c:432:0: style: The function 'rc_i2c_read_data' is never used. [unusedFunction]
+
+^
+library/src/io/i2c.c:355:0: style: The function 'rc_i2c_send_byte' is never used. [unusedFunction]
+
+^
+library/src/io/i2c.c:322:0: style: The function 'rc_i2c_write_word' is never used. [unusedFunction]
+
+^
+library/src/io/i2c.c:286:0: style: The function 'rc_i2c_write_words' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:13:0: style: The function 'rc_initialize' is never used. [unusedFunction]
+
+^
+library/src/math/kalman.c:80:0: style: The function 'rc_kalman_alloc_ekf' is never used. [unusedFunction]
+
+^
+library/src/math/kalman.c:14:0: style: The function 'rc_kalman_empty' is never used. [unusedFunction]
+
+^
+library/src/math/kalman.c:140:0: style: The function 'rc_kalman_reset' is never used. [unusedFunction]
+
+^
+library/src/math/kalman.c:250:0: style: The function 'rc_kalman_update_ekf' is never used. [unusedFunction]
+
+^
+library/src/led.c:91:0: style: The function 'rc_led_get' is never used. [unusedFunction]
+
+^
+library/src/led.c:153:0: style: The function 'rc_led_stop_blink' is never used. [unusedFunction]
+
+^
+library/src/led.c:160:0: style: The function 'rc_led_stop_blink_all' is never used. [unusedFunction]
+
+^
+library/src/math/matrix.c:215:0: style: The function 'rc_matrix_zero_out' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:784:0: style: The function 'rc_mav_get_att_pos_mocap' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:508:0: style: The function 'rc_mav_get_attitude' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:530:0: style: The function 'rc_mav_get_attitude_quaternion' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:399:0: style: The function 'rc_mav_get_connection_state' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:574:0: style: The function 'rc_mav_get_global_position_int' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:663:0: style: The function 'rc_mav_get_gps_raw_int' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:487:0: style: The function 'rc_mav_get_heartbeat' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:551:0: style: The function 'rc_mav_get_local_position_ned' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:769:0: style: The function 'rc_mav_get_manual_control' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:347:0: style: The function 'rc_mav_get_msg' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:684:0: style: The function 'rc_mav_get_scaled_pressure' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:717:0: style: The function 'rc_mav_get_servo_output_raw' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:634:0: style: The function 'rc_mav_get_set_position_target_global_int' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:604:0: style: The function 'rc_mav_get_set_position_target_local_ned' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:405:0: style: The function 'rc_mav_get_sys_id_of_last_msg' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:746:0: style: The function 'rc_mav_get_sys_status' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:334:0: style: The function 'rc_mav_is_new_msg' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:427:0: style: The function 'rc_mav_ns_since_last_msg' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:443:0: style: The function 'rc_mav_ns_since_last_msg_any' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:777:0: style: The function 'rc_mav_send_att_pos_mocap' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:495:0: style: The function 'rc_mav_send_attitude' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:516:0: style: The function 'rc_mav_send_attitude_quaternion' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:559:0: style: The function 'rc_mav_send_global_position_int' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:642:0: style: The function 'rc_mav_send_gps_raw_int' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:480:0: style: The function 'rc_mav_send_heartbeat' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:538:0: style: The function 'rc_mav_send_local_position_ned' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:754:0: style: The function 'rc_mav_send_manual_control' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:673:0: style: The function 'rc_mav_send_scaled_pressure' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:692:0: style: The function 'rc_mav_send_servo_output_raw' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:612:0: style: The function 'rc_mav_send_set_position_target_global_int' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:582:0: style: The function 'rc_mav_send_set_position_target_local_ned' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:725:0: style: The function 'rc_mav_send_sys_status' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:356:0: style: The function 'rc_mav_set_callback' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:276:0: style: The function 'rc_mav_set_dest_ip' is never used. [unusedFunction]
+
+^
+library/src/mavlink_udp.c:282:0: style: The function 'rc_mav_set_system_id' is never used. [unusedFunction]
+
+^
+library/src/mpu/mpu.c:3261:0: style: The function 'rc_mpu_block_until_dmp_data' is never used. [unusedFunction]
+
+^
+library/src/mpu/mpu.c:3281:0: style: The function 'rc_mpu_block_until_tap' is never used. [unusedFunction]
+
+^
+library/src/mpu/mpu.c:3241:0: style: The function 'rc_mpu_is_accel_calibrated' is never used. [unusedFunction]
+
+^
+library/src/mpu/mpu.c:3235:0: style: The function 'rc_mpu_is_mag_calibrated' is never used. [unusedFunction]
+
+^
+library/src/mpu/mpu.c:3249:0: style: The function 'rc_mpu_nanos_since_last_dmp_interrupt' is never used. [unusedFunction]
+
+^
+library/src/mpu/mpu.c:3255:0: style: The function 'rc_mpu_nanos_since_last_tap' is never used. [unusedFunction]
+
+^
+library/src/mpu/mpu.c:189:0: style: The function 'rc_mpu_set_config_to_default' is never used. [unusedFunction]
+
+^
+library/src/math/quaternion.c:41:0: style: The function 'rc_normalize_quaternion' is never used. [unusedFunction]
+
+^
+library/src/pinmux.c:329:0: style: The function 'rc_pinmux_set_default' is never used. [unusedFunction]
+
+^
+library/src/start_stop.c:41:0: style: The function 'rc_print_state' is never used. [unusedFunction]
+
+^
+library/src/pthread.c:180:0: style: The function 'rc_pthread_set_process_niceness' is never used. [unusedFunction]
+
+^
+library/src/pthread.c:154:0: style: The function 'rc_pthread_set_properties_self' is never used. [unusedFunction]
+
+^
+library/src/io/pwm.c:471:0: style: The function 'rc_pwm_set_duty_ns' is never used. [unusedFunction]
+
+^
+library/src/math/quaternion.c:204:0: style: The function 'rc_quaternion_conjugate_array' is never used. [unusedFunction]
+
+^
+library/src/math/quaternion.c:218:0: style: The function 'rc_quaternion_conjugate_array_inplace' is never used. [unusedFunction]
+
+^
+library/src/math/quaternion.c:185:0: style: The function 'rc_quaternion_conjugate_inplace' is never used. [unusedFunction]
+
+^
+library/src/math/quaternion.c:116:0: style: The function 'rc_quaternion_from_tb' is never used. [unusedFunction]
+
+^
+library/src/math/quaternion.c:231:0: style: The function 'rc_quaternion_imaginary_part' is never used. [unusedFunction]
+
+^
+library/src/math/quaternion.c:18:0: style: The function 'rc_quaternion_norm' is never used. [unusedFunction]
+
+^
+library/src/math/quaternion.c:28:0: style: The function 'rc_quaternion_norm_array' is never used. [unusedFunction]
+
+^
+library/src/math/quaternion.c:387:0: style: The function 'rc_quaternion_rotate_vector' is never used. [unusedFunction]
+
+^
+library/src/math/quaternion.c:447:0: style: The function 'rc_quaternion_to_rotation_matrix' is never used. [unusedFunction]
+
+^
+library/src/math/quaternion.c:79:0: style: The function 'rc_quaternion_to_tb' is never used. [unusedFunction]
+
+^
+library/src/math/ring_buffer.c:30:0: style: The function 'rc_ringbuf_empty' is never used. [unusedFunction]
+
+^
+library/src/math/other.c:49:0: style: The function 'rc_saturate_float' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:113:0: style: The function 'rc_set_encoder_pos' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:74:0: style: The function 'rc_set_mode_pressed_func' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:82:0: style: The function 'rc_set_mode_released_func' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:130:0: style: The function 'rc_set_motor' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:135:0: style: The function 'rc_set_motor_all' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:151:0: style: The function 'rc_set_motor_brake' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:157:0: style: The function 'rc_set_motor_brake_all' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:140:0: style: The function 'rc_set_motor_free_spin' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:145:0: style: The function 'rc_set_motor_free_spin_all' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:57:0: style: The function 'rc_set_pause_pressed_func' is never used. [unusedFunction]
+
+^
+library/src/deprecated.c:65:0: style: The function 'rc_set_pause_released_func' is never used. [unusedFunction]
+
+^
+library/src/io/spi.c:284:0: style: The function 'rc_spi_get_fd' is never used. [unusedFunction]
+
+^
+library/src/io/spi.c:168:0: style: The function 'rc_spi_init_manual_slave' is never used. [unusedFunction]
+
+^
+library/src/io/spi.c:341:0: style: The function 'rc_spi_manual_select' is never used. [unusedFunction]
+
+^
+library/src/io/spi.c:454:0: style: The function 'rc_spi_read' is never used. [unusedFunction]
+
+^
+library/src/io/spi.c:412:0: style: The function 'rc_spi_write' is never used. [unusedFunction]
+
+^
+library/src/time.c:102:0: style: The function 'rc_timespec_add' is never used. [unusedFunction]
+
+^
+library/src/time.c:78:0: style: The function 'rc_timespec_diff' is never used. [unusedFunction]
+
+^
+library/src/time.c:58:0: style: The function 'rc_timespec_to_micros' is never used. [unusedFunction]
+
+^
+library/src/time.c:63:0: style: The function 'rc_timespec_to_millis' is never used. [unusedFunction]
+
+^
+library/src/time.c:68:0: style: The function 'rc_timeval_to_micros' is never used. [unusedFunction]
+
+^
+library/src/time.c:73:0: style: The function 'rc_timeval_to_millis' is never used. [unusedFunction]
+
+^
+library/src/io/uart.c:444:0: style: The function 'rc_uart_bytes_available' is never used. [unusedFunction]
+
+^
+library/src/io/uart.c:227:0: style: The function 'rc_uart_get_fd' is never used. [unusedFunction]
+
+^
+library/src/math/vector.c:364:0: style: The function 'rc_vector_cross_product' is never used. [unusedFunction]
+
+^
+library/src/math/vector.c:187:0: style: The function 'rc_vector_print_sci' is never used. [unusedFunction]
+
+^
+library/src/math/vector.c:327:0: style: The function 'rc_vector_projection' is never used. [unusedFunction]
+
+^
+library/src/version.c:16:0: style: The function 'rc_version' is never used. [unusedFunction]
+
+^
+library/src/version.c:22:0: style: The function 'rc_version_string' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
